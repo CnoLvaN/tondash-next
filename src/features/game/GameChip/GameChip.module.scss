@@ -1,0 +1,57 @@
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  border: 4px solid;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+  // opacity: 0.3;
+
+  &.active {
+    transform: scale(1.1);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 500px) {
+    border-width: 3px;
+    font-size: 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    border-width: 2px;
+    font-size: 8px;
+  }
+}
+
+.attacker {
+  border-color: rgb(181, 112, 255);
+  background-color: #6e1fce;
+
+  &.disabled {
+    border-color: #4f1398;
+  }
+}
+
+.runner {
+  border-color: rgb(77 150 255);
+  background-color: #006bb2;
+
+  &.disabled {
+    border-color: #021d3c;
+  }
+}
+
+.enemy {
+  background-color: #aaa;
+}

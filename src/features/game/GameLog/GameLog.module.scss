@@ -1,0 +1,67 @@
+.log {
+  position: relative;
+  margin: 24px auto;
+}
+
+.title {
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Kallisto', sans-serif;
+  font-style: bold;
+  text-align: center;
+}
+
+.entries {
+  width: 100%;
+
+  td,
+  th {
+    padding: 2px;
+    border: 1px solid #ccc;
+  }
+
+  th {
+    font-size: 12px;
+  }
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.attacker,
+.runner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+}
+
+.attacker {
+  background-color: #6e1fce;
+}
+
+.runner {
+  background-color: #19fb9b;
+  color: #000;
+}
+
+.points {
+  font-size: 14px;
+  font-weight: bold;
+
+  // &.positive {
+  //   color: #19fb9b;
+  // }
+
+  // &.negative {
+  //   color: #671ec0;
+  // }
+}

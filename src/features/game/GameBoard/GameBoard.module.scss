@@ -1,0 +1,67 @@
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: #fff;
+}
+
+.info {
+  text-align: center;
+}
+
+.round {
+  width: max-content;
+  border-radius: 30px;
+  margin: 0 auto 10px;
+  padding: 6px 20px;
+  background-color: #07acff;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Kallisto', sans-serif;
+  font-style: normal;
+}
+
+.area {
+  position: relative;
+}
+
+.light {
+  --light-size: 80%;
+  position: absolute;
+  top: calc((100% - var(--light-size)) / 2);
+  left: calc((100% - var(--light-size)) / 2);
+  width: var(--light-size);
+  height: var(--light-size);
+  border-radius: 50%;
+  // background: #f087ff;
+  // filter: blur(200px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.field {
+  position: relative;
+  padding: 4vw;
+  border-radius: 24px;
+  // background: url('/images/field-bg.png') center center no-repeat #1b1622;
+  background-size: contain;
+  box-shadow: 0 5px 10px rgba(#000, 0.5);
+
+  @media screen and (min-width: 768px) {
+    padding: 30px;
+  }
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+}

@@ -1,0 +1,22 @@
+.status {
+  color: #07acff;
+}
+
+.text {
+  .runner & {
+    color: rgb(77 150 255);
+  }
+
+  .attacker & {
+    color: rgb(181, 112, 255);
+  }
+
+  .attackerDone &,
+  .runnerDone & {
+    text-decoration: line-through;
+  }
+}
+
+.done {
+  font-weight: bold;
+}
