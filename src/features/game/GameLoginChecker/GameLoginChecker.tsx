@@ -22,8 +22,16 @@ const GameLoginChecker: FC = () => {
     if (!isTankYouVisible) return;
     setTimeout(() => {
       setIsTankYouVisible(false);
-    }, 3000);
+    }, 1000);
   }, [isTankYouVisible]);
+
+  const [payValue, setPayValue] = useState(1);
+  const [payValueTest, setPayValueTest] = useState(1);
+
+  const handlePayMore = async () => {
+    setPayValue(payValueTest);
+    handlePay();
+  };
 
   const handlePay = async () => {
     const transaction: SendTransactionRequest = {
@@ -32,7 +40,7 @@ const GameLoginChecker: FC = () => {
       messages: [
         {
           address: "0QDmiXPOTeV34BgpeV9IrLL1w3SfPSxmbVTu99uQcgy9J7X1",
-          amount: String(toNano(1)),
+          amount: String(toNano(payValue)),
         },
       ],
     };
@@ -52,7 +60,7 @@ const GameLoginChecker: FC = () => {
     return (
       <div className={styles.flex}>
         <button onClick={handlePay} className={styles.btnPrimary}>
-          Give me 1 TON
+          BET 1 TON
         </button>
         <span>or</span>
         <div className={styles.myValue}>
@@ -63,8 +71,9 @@ const GameLoginChecker: FC = () => {
             placeholder="1"
             min={1}
             max={100}
+            onChange={(event) => setPayValueTest(Number(event.target.value))}
           />
-          <button onClick={handlePay} id="second" className={styles.btnPrimary}>
+          <button onClick={handlePayMore} className={styles.btnPrimary}>
             bet
           </button>
         </div>
