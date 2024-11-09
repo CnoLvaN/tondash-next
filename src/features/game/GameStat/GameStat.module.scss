@@ -33,30 +33,15 @@
   font-style: normal;
 
   .attacker & {
-    background-image: linear-gradient(
-      100.51deg,
-      #f087ff 27.61%,
-      #6e1fce 62.14%,
-      rgba(110, 31, 206, 0.1) 113.78%
-    );
+    background-color: #f087ff;
   }
 
   .runner & {
-    background-image: linear-gradient(
-      97.65deg,
-      rgb(181, 112, 255) 11.36%,
-      #199890 54.3%,
-      #005f59 100.78%
-    );
+    background-color: #1fcff1;
   }
 
   .sum & {
-    background-image: linear-gradient(
-      100.22deg,
-      #1fcff1 30.11%,
-      #234cb6 66.43%,
-      rgba(35, 76, 182, 0.1) 120.76%
-    );
+    background-color: #199890;
   }
 
   @media screen and (max-width: 500px) {

@@ -8,11 +8,14 @@ import {
   CHAIN,
   SendTransactionRequest,
   useTonConnectUI,
+  useTonWallet,
 } from "@tonconnect/ui-react";
 import styles from "./GameLoginChecker.module.scss";
 
 const GameLoginChecker: FC = () => {
   const [tonConnectUI] = useTonConnectUI();
+  const wallet = useTonWallet();
+  console.log("🚀 ~ wallet:", wallet);
 
   const [isPaid, setIsPaid] = useState(false);
   const [isTankYouVisible, setIsTankYouVisible] = useState(false);
@@ -25,13 +28,13 @@ const GameLoginChecker: FC = () => {
     }, 1000);
   }, [isTankYouVisible]);
 
-  const [payValue, setPayValue] = useState(1);
-  const [payValueTest, setPayValueTest] = useState(1);
+  const [payValue] = useState(1);
+  // const [payValueTest, setPayValueTest] = useState(1);
 
-  const handlePayMore = async () => {
-    setPayValue(payValueTest);
-    handlePay();
-  };
+  // const handlePayMore = async () => {
+  //   setPayValue(payValueTest);
+  //   handlePay();
+  // };
 
   const handlePay = async () => {
     const transaction: SendTransactionRequest = {
@@ -56,13 +59,17 @@ const GameLoginChecker: FC = () => {
     }
   };
 
+  if (!wallet) {
+    return <div>Login!</div>;
+  }
+
   if (!isPaid) {
     return (
       <div className={styles.flex}>
         <button onClick={handlePay} className={styles.btnPrimary}>
           BET 1 TON
         </button>
-        <span>or</span>
+        {/* <span>or</span>
         <div className={styles.myValue}>
           <input
             type="number"
@@ -71,12 +78,12 @@ const GameLoginChecker: FC = () => {
             placeholder="1"
             min={1}
             max={100}
-            onChange={(event) => setPayValueTest(Number(event.target.value))}
+            onInput={(event) => setPayValueTest(Number(event.target.))}
           />
           <button onClick={handlePayMore} className={styles.btnPrimary}>
             bet
           </button>
-        </div>
+        </div> */}
       </div>
     );
   }
