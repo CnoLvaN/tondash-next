@@ -7,8 +7,8 @@
 .title,
 .subtitle {
   margin: 0;
-  color: #fff;
-  font-family: 'Kallisto', sans-serif;
+  color: #07acff;
+  font-family: "Kallisto", sans-serif;
   font-style: bold;
   text-align: center;
 }
@@ -23,15 +23,25 @@
 
 .leaders {
   width: 100%;
+  background-color: #2a2f43;
+  // color: #07acff;
 
+  thead {
+    background-color: #07acff;
+  }
+
+  .blue {
+    color: #07acff;
+  }
   td,
   th {
     padding: 2px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
   }
 
   th {
     font-size: 12px;
+    text-align: center;
   }
 }
 

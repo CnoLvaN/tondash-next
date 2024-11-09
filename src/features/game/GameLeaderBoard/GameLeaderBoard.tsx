@@ -1,7 +1,7 @@
-import React from 'react';
-import { PlayerChips } from '../types';
-import Eliminated from '@/components/Eliminated/Eliminated';
-import styles from './GameLeaderBoard.module.scss';
+import React from "react";
+import { PlayerChips } from "../types";
+import Eliminated from "@/components/Eliminated/Eliminated";
+import styles from "./GameLeaderBoard.module.scss";
 
 interface GameLeaderBoardProps {
   players: PlayerChips[];
@@ -57,13 +57,20 @@ const GameLeaderBoard: React.FC<GameLeaderBoardProps> = ({
               index < 10 && (
                 <tr
                   key={player.player_id}
-                  style={player === realPlayer ? { fontWeight: 'bold' } : {}}
+                  style={
+                    player === realPlayer
+                      ? {
+                          fontWeight: "bold",
+                          color: "#07acff",
+                        }
+                      : {}
+                  }
                 >
                   <td>{index + 1}</td>
-                  <td>{player === realPlayer ? 'You' : player.player_id}</td>
+                  <td>{player === realPlayer ? "You" : player.player_id}</td>
                   <td>{player.attacker_points.toFixed(2)}</td>
                   <td>{player.runner_points.toFixed(2)}</td>
-                  <td>
+                  <td className={styles.blue}>
                     {(player.attacker_points + player.runner_points).toFixed(2)}
                   </td>
                 </tr>
