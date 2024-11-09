@@ -60,7 +60,11 @@ const GameLoginChecker: FC = () => {
   };
 
   if (!wallet) {
-    return <div>Login!</div>;
+    return (
+      <div className={styles.flex}>
+        <div className={styles.login}>You have to log in to play!</div>
+      </div>
+    );
   }
 
   if (!isPaid) {
