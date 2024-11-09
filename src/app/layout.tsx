@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TonConnectUIProvider manifestUrl="https://storygen.fun/tonconnect-manifest.json">
+        <TonConnectUIProvider manifestUrl="https://tondash-next.vercel.app/tonconnect-manifest.json">
           <UiLayout>{children}</UiLayout>
         </TonConnectUIProvider>
       </body>
